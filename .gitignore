@@ -31,8 +31,8 @@ yarn-error.log*
 # Vercel
 .vercel
 
-# Prisma
-backend/prisma/migrations/
+# Prisma generated client (regenerated via db:generate)
+packages/prisma/src/generated/
 
 # IDE
 .vscode/
@@ -43,4 +43,15 @@ backend/prisma/migrations/
 
 # OS
 Thumbs.db
+Thumbs.db:encryptable
+desktop.ini
 
+# Logs
+logs/
+*.log
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Uploads / user-generated content
+uploads/
