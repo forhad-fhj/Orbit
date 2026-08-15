@@ -1,0 +1,1079 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/8j10o7",
+    "id": "8j10o7",
+    "slide": 9,
+    "layoutId": "631db8ec-9a34-4251-a0c5-b55fdbadfe29",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "541dfd2b-5087-45fa-a5c2-9054ac47a0f6",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Helvetica Neue"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "631db8ec-9a34-4251-a0c5-b55fdbadfe29",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "541dfd2b-5087-45fa-a5c2-9054ac47a0f6",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "541dfd2b-5087-45fa-a5c2-9054ac47a0f6",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5onu5kby",
+      "id": "1",
+      "bbox": [
+        41,
+        34,
+        1138,
+        86
+      ],
+      "geometry": "rect",
+      "text": "CHWs turn digital content into local action",
+      "textPreview": "CHWs turn digital content into local action",
+      "resolvedFontSize": 39,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 39,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "CHWs turn digital content into local action"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "CHWs turn digital content into local action",
+          "resolvedTextStyle": {
+            "fontSize": 39,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "CHWs turn digital content into local action",
+              "fontSize": 39,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ilwba5cn",
+      "id": "2",
+      "bbox": [
+        1184,
+        659,
+        55,
+        25
+      ],
+      "geometry": "rect",
+      "text": "09",
+      "textPreview": "09",
+      "resolvedFontSize": 12.83,
+      "resolvedTextStyle": {
+        "anchor": 3,
+        "fontSize": 13,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "right",
+        "verticalAlignment": "bottom",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.99,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "09"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "09",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "09",
+              "fontSize": 13,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jm5c3ats",
+      "id": "3",
+      "bbox": [
+        41,
+        145,
+        360,
+        26
+      ],
+      "geometry": "rect",
+      "text": "DELIVERY MODEL",
+      "textPreview": "DELIVERY MODEL",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Helvetica Neue",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "DELIVERY MODEL"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "DELIVERY MODEL",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "typeface": "Helvetica Neue",
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DELIVERY MODEL",
+              "fontSize": 13,
+              "typeface": "Helvetica Neue",
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sbytgzup",
+      "id": "4",
+      "bbox": [
+        72,
+        220,
+        330,
+        235
+      ],
+      "geometry": "rect",
+      "fillColor": "#F1F2F4",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tc7u9kba",
+      "id": "5",
+      "bbox": [
+        72,
+        220,
+        8,
+        235
+      ],
+      "geometry": "rect",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6pwbepcj",
+      "id": "6",
+      "bbox": [
+        98,
+        242,
+        278,
+        34
+      ],
+      "geometry": "rect",
+      "text": "Language bridge",
+      "textPreview": "Language bridge",
+      "resolvedFontSize": 20.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.85,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Language bridge"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Language bridge",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Language bridge",
+              "fontSize": 24,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7a5c7ut4",
+      "id": "7",
+      "bbox": [
+        98,
+        286,
+        278,
+        56
+      ],
+      "geometry": "rect",
+      "text": "A trusted worker can explain formal health advice in everyday speech.",
+      "textPreview": "A trusted worker can explain formal health advice in everyday speech.",
+      "resolvedFontSize": 17.91,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 19,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.94,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A trusted worker can explain formal"
+          },
+          {
+            "index": 2,
+            "text": "health advice in everyday speech."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A trusted worker can explain formal health advice in everyday speech.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A trusted worker can explain formal health advice in everyday speech.",
+              "fontSize": 19,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfydkzul",
+      "id": "8",
+      "bbox": [
+        98,
+        401,
+        278,
+        32
+      ],
+      "geometry": "rect",
+      "text": "Important where Sylheti, Chattisheuli, and tribal languages shape daily communication.",
+      "textPreview": "Important where Sylheti, Chattisheuli, and tribal languages shape daily communication.",
+      "resolvedFontSize": 9.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 15,
+        "typeface": "Helvetica Neue",
+        "color": "#596270",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.62,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Important where Sylheti, Chattisheuli, and tribal languages shape"
+          },
+          {
+            "index": 2,
+            "text": "daily communication."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Important where Sylheti, Chattisheuli, and tribal languages shape daily communication.",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "typeface": "Helvetica Neue",
+            "color": "#596270",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Important where Sylheti, Chattisheuli, and tribal languages shape daily communication.",
+              "fontSize": 15,
+              "typeface": "Helvetica Neue",
+              "color": "#596270",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hg7ud4b6",
+      "id": "9",
+      "bbox": [
+        475,
+        220,
+        330,
+        235
+      ],
+      "geometry": "rect",
+      "fillColor": "#F1F2F4",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lo3a1sza",
+      "id": "10",
+      "bbox": [
+        475,
+        220,
+        8,
+        235
+      ],
+      "geometry": "rect",
+      "fillColor": "#2C8B68",
+      "lineColor": "#2C8B68",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0nu98nip",
+      "id": "11",
+      "bbox": [
+        501,
+        242,
+        278,
+        34
+      ],
+      "geometry": "rect",
+      "text": "Care tracker",
+      "textPreview": "Care tracker",
+      "resolvedFontSize": 20.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.85,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Care tracker"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Care tracker",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Care tracker",
+              "fontSize": 24,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zm1szih4",
+      "id": "12",
+      "bbox": [
+        501,
+        286,
+        278,
+        56
+      ],
+      "geometry": "rect",
+      "text": "Digital checklists help CHWs track visits, risks, referrals, and overdue mothers.",
+      "textPreview": "Digital checklists help CHWs track visits, risks, referrals, and overdue mothers.",
+      "resolvedFontSize": 16.11,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 19,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.85,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Digital checklists help CHWs track visits,"
+          },
+          {
+            "index": 2,
+            "text": "risks, referrals, and overdue mothers."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Digital checklists help CHWs track visits, risks, referrals, and overdue mothers.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Digital checklists help CHWs track visits, risks, referrals, and overdue mothers.",
+              "fontSize": 19,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y1sr6d0j",
+      "id": "13",
+      "bbox": [
+        501,
+        401,
+        278,
+        32
+      ],
+      "geometry": "rect",
+      "text": "Bangladesh tablet-supported CHW work sustained visit coverage above 90%.",
+      "textPreview": "Bangladesh tablet-supported CHW work sustained visit coverage above 90%.",
+      "resolvedFontSize": 9.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 15,
+        "typeface": "Helvetica Neue",
+        "color": "#596270",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.62,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Bangladesh tablet-supported CHW work sustained visit coverage"
+          },
+          {
+            "index": 2,
+            "text": "above 90%."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Bangladesh tablet-supported CHW work sustained visit coverage above 90%.",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "typeface": "Helvetica Neue",
+            "color": "#596270",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Bangladesh tablet-supported CHW work sustained visit coverage above 90%.",
+              "fontSize": 15,
+              "typeface": "Helvetica Neue",
+              "color": "#596270",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9s3a5sz6",
+      "id": "14",
+      "bbox": [
+        878,
+        220,
+        330,
+        235
+      ],
+      "geometry": "rect",
+      "fillColor": "#F1F2F4",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8rutcnil",
+      "id": "15",
+      "bbox": [
+        878,
+        220,
+        8,
+        235
+      ],
+      "geometry": "rect",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nqls3ih0",
+      "id": "16",
+      "bbox": [
+        904,
+        242,
+        278,
+        34
+      ],
+      "geometry": "rect",
+      "text": "Trust builder",
+      "textPreview": "Trust builder",
+      "resolvedFontSize": 20.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.85,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Trust builder"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Trust builder",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Trust builder",
+              "fontSize": 24,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mpcrax0f",
+      "id": "17",
+      "bbox": [
+        904,
+        286,
+        278,
+        56
+      ],
+      "geometry": "rect",
+      "text": "Mothers may act more readily when guidance comes through a known person.",
+      "textPreview": "Mothers may act more readily when guidance comes through a known person.",
+      "resolvedFontSize": 15.25,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 19,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.8,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Mothers may act more readily when"
+          },
+          {
+            "index": 2,
+            "text": "guidance comes through a known"
+          },
+          {
+            "index": 3,
+            "text": "person."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Mothers may act more readily when guidance comes through a known person.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Mothers may act more readily when guidance comes through a known person.",
+              "fontSize": 19,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pwjat8z2",
+      "id": "18",
+      "bbox": [
+        904,
+        401,
+        278,
+        32
+      ],
+      "geometry": "rect",
+      "text": "The review repeatedly finds CHW-mediated delivery stronger than direct-to-user messaging.",
+      "textPreview": "The review repeatedly finds CHW-mediated delivery stronger than direct-to-user messaging.",
+      "resolvedFontSize": 9.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 15,
+        "typeface": "Helvetica Neue",
+        "color": "#596270",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.62,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The review repeatedly finds CHW-mediated delivery stronger than"
+          },
+          {
+            "index": 2,
+            "text": "direct-to-user messaging."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The review repeatedly finds CHW-mediated delivery stronger than direct-to-user messaging.",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "typeface": "Helvetica Neue",
+            "color": "#596270",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The review repeatedly finds CHW-mediated delivery stronger than direct-to-user messaging.",
+              "fontSize": 15,
+              "typeface": "Helvetica Neue",
+              "color": "#596270",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4va903ih",
+      "id": "19",
+      "bbox": [
+        92,
+        545,
+        1050,
+        54
+      ],
+      "geometry": "rect",
+      "text": "Implementation caution: extra app tasks need supervision, compensation, and recognition, otherwise CHW motivation may fall.",
+      "textPreview": "Implementation caution: extra app tasks need supervision, compensation, and recognition, otherwise CHW motivation may fall.",
+      "resolvedFontSize": 19.97,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.83,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Implementation caution: extra app tasks need supervision, compensation, and recognition, otherwise CHW motivation may"
+          },
+          {
+            "index": 2,
+            "text": "fall."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Implementation caution: extra app tasks need supervision, compensation, and recognition, otherwise CHW motivation may fall.",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Implementation caution: extra app tasks need supervision, compensation, and recognition, otherwise CHW motivation may fall.",
+              "fontSize": 24,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
