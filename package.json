@@ -14,7 +14,7 @@
     "dev": "concurrently \"npm run dev -w apps/api\" \"npm run dev -w apps/web\"",
     "build": "npm run build --workspace=packages/shared-types --workspace=packages/prisma && npm run build --workspace=apps/api --workspace=apps/web --if-present",
     "build:web": "npm run build -w apps/web",
-    "build:api": "npm run build -w packages/shared-types -w packages/prisma && npm run build -w apps/api",
+    "build:api": "npm run db:generate && npm run build -w packages/shared-types -w packages/prisma && npm run build -w apps/api",
     "start": "npm run start --workspaces --if-present",
     "db:push": "npm run db:push -w packages/prisma",
     "db:generate": "prisma generate --schema=./packages/prisma/prisma/schema.prisma",
