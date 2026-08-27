@@ -1,7 +1,7 @@
 {
   "buildCommand": "npm run build -w apps/web",
   "outputDirectory": "apps/web/.next",
-  "installCommand": "npm install --ignore-scripts --package-lock=false",
+  "installCommand": "npm ci --ignore-scripts",
   "framework": "nextjs",
   "regions": ["iad1"]
 }
