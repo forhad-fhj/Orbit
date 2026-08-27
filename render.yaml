@@ -3,7 +3,7 @@ services:
     name: social-platform-api
     env: node
     plan: free
-    buildCommand: npm install && npm run build:api
+    buildCommand: npm install --include=dev && npm run build:api
     startCommand: npm run start -w apps/api
     healthCheckPath: /health
     envVars:
