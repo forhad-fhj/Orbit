@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install --ignore-scripts",
+  "framework": "nextjs",
+  "regions": ["iad1"]
+}
