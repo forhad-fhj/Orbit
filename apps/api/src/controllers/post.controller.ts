@@ -14,7 +14,7 @@ export const createPost = async (req: Request, res: Response) => {
       }
     }
 
-    const hashtags = content ? Array.from(new Set(content.match(/#[\w]+/g) || [])).map((tag: string) => tag.toLowerCase()) : [];
+    const hashtags = content ? Array.from(new Set(content.match(/#[\w]+/g) || [])).map((tag) => (tag as string).toLowerCase()) : [];
 
     const post = await prisma.post.create({
       data: {

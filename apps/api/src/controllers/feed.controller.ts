@@ -48,7 +48,7 @@ export const getHomeFeed = async (req: Request, res: Response) => {
       }
     }, blockedIds);
 
-    const hydMap = new Map(hydration.map((h: any) => [h.id, h]));
+    const hydMap = new Map<string, any>(hydration.map((h: any) => [h.id, h]));
 
     const mergedPosts = posts.slice(0, limit).map(p => ({
       ...p,
@@ -172,9 +172,9 @@ export const getSavedPosts = async (req: Request, res: Response) => {
 
     // Enforce gender manually since it's a nested include
     const validPosts = savedRecords
-      .map(record => record.post)
-      .filter(p => p.author.gender === userGender)
-      .map(p => ({
+      .map((record: any) => record.post)
+      .filter((p: any) => p.author.gender === userGender)
+      .map((p: any) => ({
         ...p,
         myReaction: p.reactions?.[0] || null,
         isSaved: p.savedBy?.length > 0,

@@ -5,13 +5,13 @@ const basePrisma = new PrismaClient();
 export const prisma = basePrisma.$extends({
   query: {
     user: {
-      async update({ args, query }) {
+      async update({ args, query }: { args: any, query: any }) {
         if (args.data.gender !== undefined) {
           throw new Error('Gender is immutable and cannot be updated once set.');
         }
         return query(args);
       },
-      async updateMany({ args, query }) {
+      async updateMany({ args, query }: { args: any, query: any }) {
         if (args.data.gender !== undefined) {
           throw new Error('Gender is immutable and cannot be updated once set.');
         }

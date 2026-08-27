@@ -61,8 +61,7 @@ export const reportEntity = async (req: Request, res: Response) => {
         reporterId,
         targetId,
         targetType,
-        reason,
-        details
+        reason
       }
     });
 

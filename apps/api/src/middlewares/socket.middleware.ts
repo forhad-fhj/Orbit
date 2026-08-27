@@ -30,7 +30,7 @@ export const socketAuthMiddleware = async (socket: Socket, next: (err?: Error) =
       },
       select: { blockerId: true, blockedId: true }
     });
-    decoded.blockedIds = blocks.map(b => b.blockerId === decoded.userId ? b.blockedId : b.blockerId);
+    decoded.blockedIds = blocks.map((b: any) => b.blockerId === decoded.userId ? b.blockedId : b.blockerId);
 
     socket.data.user = decoded;
     next();

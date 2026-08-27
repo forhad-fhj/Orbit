@@ -140,7 +140,7 @@ export const registerChatHandlers = (io: Server, socket: Socket) => {
         where: { userId: user.userId },
         select: { conversationId: true }
       });
-      participations.forEach(p => {
+      participations.forEach((p: any) => {
         socket.join(`conv_${p.conversationId}`);
       });
     } catch (error) {

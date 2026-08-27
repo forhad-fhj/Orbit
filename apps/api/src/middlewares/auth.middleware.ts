@@ -31,7 +31,7 @@ export const requireAuth = async (req: Request, res: Response, next: NextFunctio
       select: { blockerId: true, blockedId: true }
     });
     
-    const blockedIds = blocks.map(b => b.blockerId === decoded.userId ? b.blockedId : b.blockerId);
+    const blockedIds = blocks.map((b: any) => b.blockerId === decoded.userId ? b.blockedId : b.blockerId);
     decoded.blockedIds = blockedIds;
 
     req.user = decoded;

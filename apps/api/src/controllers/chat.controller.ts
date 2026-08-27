@@ -29,10 +29,10 @@ export const getConversations = async (req: Request, res: Response) => {
     });
 
     const conversations = participations
-      .map(p => {
+      .map((p: any) => {
         const otherParticipants = p.conversation.participants
-          .filter(part => part.userId !== userId)
-          .filter(part => !blockedIds.includes(part.userId));
+          .filter((part: any) => part.userId !== userId)
+          .filter((part: any) => !blockedIds.includes(part.userId));
 
         if (otherParticipants.length === 0 && !p.conversation.isGroup) return null;
 
@@ -40,7 +40,7 @@ export const getConversations = async (req: Request, res: Response) => {
         return {
           id: p.conversation.id,
           isGroup: p.conversation.isGroup,
-          participants: otherParticipants.map(part => part.user),
+          participants: otherParticipants.map((part: any) => part.user),
           lastMessage,
           createdAt: p.conversation.createdAt
         };

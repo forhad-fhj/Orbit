@@ -11,7 +11,7 @@ export const validate = (schema: ZodSchema) => {
         return res.status(400).json({
           success: false,
           error: 'Validation failed',
-          details: error.errors.map(e => ({
+          details: error.issues.map((e: any) => ({
             field: e.path.join('.'),
             message: e.message,
           })),
@@ -32,7 +32,7 @@ export const validateQuery = (schema: ZodSchema) => {
         return res.status(400).json({
           success: false,
           error: 'Validation failed',
-          details: error.errors.map(e => ({
+          details: error.issues.map((e: any) => ({
             field: e.path.join('.'),
             message: e.message,
           })),

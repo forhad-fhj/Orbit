@@ -11,9 +11,10 @@ export const createGroup = async (req: Request, res: Response) => {
       data: {
         name,
         description,
-        isPrivate,
+        privacy: isPrivate ? 'PRIVATE' : 'PUBLIC',
         coverPhotoUrl,
         gender: userGender, // Locks group to creator's gender
+        ownerId: userId,
         members: {
           create: {
             userId,
