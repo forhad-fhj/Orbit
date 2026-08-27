@@ -1,5 +1,5 @@
 [phases.build]
-cmds = ["npm install", "npm run db:generate -w packages/prisma", "npm run build -w packages/shared-types", "npm run build -w apps/api"]
+cmds = ["npm ci --ignore-scripts", "npm run db:generate -w packages/prisma", "npm run build -w packages/shared-types", "npm run build -w apps/api"]
 
 [phases.start]
 cmd = "npm run start -w apps/api"

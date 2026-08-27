@@ -8,7 +8,7 @@ COPY packages/shared-types/package.json ./packages/shared-types/
 COPY apps/api/package.json ./apps/api/
 COPY apps/web/package.json ./apps/web/
 
-RUN npm install
+RUN npm ci --ignore-scripts
 
 COPY . .
 

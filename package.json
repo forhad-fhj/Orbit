@@ -20,7 +20,11 @@
     "postinstall": "npm run db:generate"
   },
   "dependencies": {
-    "prisma": "^5.22.0"
+    "prisma": "5.22.0"
+  },
+  "overrides": {
+    "@prisma/client": "5.22.0",
+    "prisma": "5.22.0"
   },
   "devDependencies": {
     "concurrently": "^10.0.5",
