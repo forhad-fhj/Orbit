@@ -16,6 +16,6 @@ RUN npm run db:generate -w packages/prisma
 RUN npm run build -w packages/shared-types
 RUN npm run build -w apps/api
 
-EXPOSE 3000
+EXPOSE 10000
 
 CMD ["npm", "run", "start", "-w", "apps/api"]

@@ -18,6 +18,9 @@
     "db:push": "npm run db:push -w packages/prisma",
     "db:generate": "npm run db:generate -w packages/prisma"
   },
+  "dependencies": {
+    "prisma": "^5.10.0"
+  },
   "devDependencies": {
     "concurrently": "^10.0.5",
     "next": "16.3.1"
