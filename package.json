@@ -14,6 +14,7 @@
     "db:generate": "npm run db:generate -w packages/prisma"
   },
   "devDependencies": {
-    "concurrently": "^10.0.5"
+    "concurrently": "^10.0.5",
+    "next": "16.3.1"
   }
 }
