@@ -3,7 +3,7 @@ services:
     name: social-platform-api
     env: node
     plan: free
-    buildCommand: npm ci --include=dev && npm run build:api
+    buildCommand: npm ci --include=dev && npm install -g prisma@5.22.0 && npx --yes prisma@5.22.0 generate --schema=./packages/prisma/prisma/schema.prisma && npm run build -w packages/shared-types -w packages/prisma && npm run build -w apps/api
     startCommand: npm run start -w apps/api
     healthCheckPath: /health
     envVars:
