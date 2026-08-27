@@ -21,7 +21,7 @@ export const prisma = basePrisma.$extends({
   },
   model: {
     user: {
-      findManySameGender(gender: 'MALE' | 'FEMALE', args?: Prisma.UserFindManyArgs, blockedIds: string[] = []) {
+      findManySameGender(gender: 'MALE' | 'FEMALE', args?: any, blockedIds: string[] = []) {
         const context = Prisma.getExtensionContext(this) as any;
         return context.findMany({
           ...args,
@@ -32,7 +32,7 @@ export const prisma = basePrisma.$extends({
           },
         });
       },
-      findFirstSameGender(gender: 'MALE' | 'FEMALE', args?: Prisma.UserFindFirstArgs, blockedIds: string[] = []) {
+      findFirstSameGender(gender: 'MALE' | 'FEMALE', args?: any, blockedIds: string[] = []) {
         const context = Prisma.getExtensionContext(this) as any;
         return context.findFirst({
           ...args,
@@ -45,7 +45,7 @@ export const prisma = basePrisma.$extends({
       },
     },
     post: {
-      findManySameGender(gender: 'MALE' | 'FEMALE', args?: Prisma.PostFindManyArgs, blockedIds: string[] = []) {
+      findManySameGender(gender: 'MALE' | 'FEMALE', args?: any, blockedIds: string[] = []) {
         const context = Prisma.getExtensionContext(this) as any;
         return context.findMany({
           ...args,
@@ -59,7 +59,7 @@ export const prisma = basePrisma.$extends({
           },
         });
       },
-      findFirstSameGender(gender: 'MALE' | 'FEMALE', args?: Prisma.PostFindFirstArgs, blockedIds: string[] = []) {
+      findFirstSameGender(gender: 'MALE' | 'FEMALE', args?: any, blockedIds: string[] = []) {
         const context = Prisma.getExtensionContext(this) as any;
         return context.findFirst({
           ...args,
@@ -75,7 +75,7 @@ export const prisma = basePrisma.$extends({
       },
     },
     group: {
-      findManySameGender(gender: 'MALE' | 'FEMALE', args?: Prisma.GroupFindManyArgs) {
+      findManySameGender(gender: 'MALE' | 'FEMALE', args?: any) {
         const context = Prisma.getExtensionContext(this) as any;
         return context.findMany({
           ...args,
@@ -87,7 +87,7 @@ export const prisma = basePrisma.$extends({
       },
     },
     story: {
-      findManySameGender(gender: 'MALE' | 'FEMALE', args?: Prisma.StoryFindManyArgs, blockedIds: string[] = []) {
+      findManySameGender(gender: 'MALE' | 'FEMALE', args?: any, blockedIds: string[] = []) {
         const context = Prisma.getExtensionContext(this) as any;
         return context.findMany({
           ...args,
@@ -106,3 +106,4 @@ export const prisma = basePrisma.$extends({
 });
 
 export * from '@prisma/client';
+export { PrismaClient, Prisma };

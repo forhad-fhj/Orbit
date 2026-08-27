@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { prisma } from '@socialplatform/prisma';
-import { Prisma } from '@socialplatform/prisma';
+import { Prisma } from '@prisma/client';
 
 export const getHomeFeed = async (req: Request, res: Response) => {
   try {
@@ -14,26 +14,43 @@ export const getHomeFeed = async (req: Request, res: Response) => {
     // Using raw query to rank by recency + engagement score (likes + comments weighted)
     // AND strictly enforcing the gender barrier on the join.
     const blockedIds = req.user!.blockedIds || [];
-    const blockedCondition = blockedIds.length > 0 
-      ? Prisma.sql`AND p."authorId" NOT IN (${Prisma.join(blockedIds)})`
-      : Prisma.empty;
-    const posts: any[] = await prisma.$queryRaw`
-      SELECT 
-        p.*, 
-        u.username as "authorUsername", 
-        u."avatarUrl" as "authorAvatarUrl",
-        (
-          COALESCE((SELECT COUNT(*) FROM "Reaction" r WHERE r."postId" = p.id), 0) * 2 + 
-          COALESCE((SELECT COUNT(*) FROM "Comment" c WHERE c."postId" = p.id), 0)
-        ) as "engagementScore"
-      FROM "Post" p
-      INNER JOIN "User" u ON p."authorId" = u.id
-      WHERE u.gender = CAST(${userGender} AS "Gender")
-      AND p.visibility IN ('PUBLIC', 'FRIENDS')
-      ${blockedCondition}
-      ORDER BY p."createdAt" DESC, "engagementScore" DESC
-      LIMIT ${limit + 1} OFFSET ${offset};
-    `;
+    let posts: any[];
+    if (blockedIds.length > 0) {
+      posts = await prisma.$queryRaw`
+        SELECT 
+          p.*, 
+          u.username as "authorUsername", 
+          u."avatarUrl" as "authorAvatarUrl",
+          (
+            COALESCE((SELECT COUNT(*) FROM "Reaction" r WHERE r."postId" = p.id), 0) * 2 + 
+            COALESCE((SELECT COUNT(*) FROM "Comment" c WHERE c."postId" = p.id), 0)
+          ) as "engagementScore"
+        FROM "Post" p
+        INNER JOIN "User" u ON p."authorId" = u.id
+        WHERE u.gender = CAST(${userGender} AS "Gender")
+        AND p.visibility IN ('PUBLIC', 'FRIENDS')
+        AND p."authorId" NOT IN (${Prisma.join(blockedIds)})
+        ORDER BY p."createdAt" DESC, "engagementScore" DESC
+        LIMIT ${limit + 1} OFFSET ${offset};
+      `;
+    } else {
+      posts = await prisma.$queryRaw`
+        SELECT 
+          p.*, 
+          u.username as "authorUsername", 
+          u."avatarUrl" as "authorAvatarUrl",
+          (
+            COALESCE((SELECT COUNT(*) FROM "Reaction" r WHERE r."postId" = p.id), 0) * 2 + 
+            COALESCE((SELECT COUNT(*) FROM "Comment" c WHERE c."postId" = p.id), 0)
+          ) as "engagementScore"
+        FROM "Post" p
+        INNER JOIN "User" u ON p."authorId" = u.id
+        WHERE u.gender = CAST(${userGender} AS "Gender")
+        AND p.visibility IN ('PUBLIC', 'FRIENDS')
+        ORDER BY p."createdAt" DESC, "engagementScore" DESC
+        LIMIT ${limit + 1} OFFSET ${offset};
+      `;
+    }
 
     // Fetch comments and reactions for these posts to hydrate the UI
     const postIds = posts.map(p => p.id);
