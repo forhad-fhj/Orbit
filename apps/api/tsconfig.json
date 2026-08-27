@@ -7,10 +7,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    "rootDir": "./src",
     "paths": {
       "@socialplatform/*": ["../../packages/*/src"]
     }
   },
-  "include": ["src/**/*", "jest.config.js"]
+  "include": ["src/**/*"]
 }
