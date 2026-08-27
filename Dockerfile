@@ -13,11 +13,7 @@ RUN npm install -g prisma@5.22.0
 
 COPY . .
 
-RUN npx prisma@5.22.0 generate --schema=./packages/prisma/prisma/schema.prisma
-RUN npm run build -w packages/shared-types
-RUN npm run build -w apps/api
-RUN npm run build -w packages/shared-types
-RUN npm run build -w apps/api
+RUN npm run build:api
 
 EXPOSE 10000
 
