@@ -1,9 +1,0 @@
-[phases.build]
-cmds = ["npm install -g prisma@5.22.0", "npm run build:api"]
-
-[phases.start]
-cmd = "npm run start -w apps/api"
-
-[variables]
-NODE_ENV = "production"
-NODE_VERSION = "20.20.2"

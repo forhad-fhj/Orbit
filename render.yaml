@@ -3,12 +3,12 @@ services:
     name: social-platform-api
     env: node
     plan: free
-    buildCommand: npm ci --include=dev && npm install -g prisma@5.22.0 && npm run build:api
+    buildCommand: npm ci --include=dev && npm run build:api
     startCommand: npm run start -w apps/api
     healthCheckPath: /health
     envVars:
       - key: NODE_VERSION
-        value: 20.20.2
+        value: 20
       - key: NODE_ENV
         value: production
       - key: PORT

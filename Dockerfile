@@ -9,7 +9,6 @@ COPY apps/api/package.json ./apps/api/
 COPY apps/web/package.json ./apps/web/
 
 RUN npm ci
-RUN npm install -g prisma@5.22.0
 
 COPY . .
 
