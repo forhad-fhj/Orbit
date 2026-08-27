@@ -1,8 +1,9 @@
 [phases.build]
-cmds = ["npm ci --ignore-scripts", "npm run db:generate -w packages/prisma", "npm run build -w packages/shared-types", "npm run build -w apps/api"]
+cmds = ["npm install -g prisma@5.22.0", "npm run build:api"]
 
 [phases.start]
 cmd = "npm run start -w apps/api"
 
 [variables]
 NODE_ENV = "production"
+NODE_VERSION = "20.20.2"
