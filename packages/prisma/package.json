@@ -5,11 +5,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "db:push": "npm exec -- prisma db push --schema=./prisma/schema.prisma",
-    "db:generate": "npm exec -- prisma generate --schema=./prisma/schema.prisma",
-    "db:migrate": "npm exec -- prisma migrate dev --schema=./prisma/schema.prisma",
-    "db:studio": "npm exec -- prisma studio --schema=./prisma/schema.prisma",
-    "db:seed": "npm exec -- prisma db seed"
+    "db:push": "npm exec --package=prisma@5.22.0 -- prisma db push --schema=./prisma/schema.prisma",
+    "db:generate": "npm exec --package=prisma@5.22.0 -- prisma generate --schema=./prisma/schema.prisma",
+    "db:migrate": "npm exec --package=prisma@5.22.0 -- prisma migrate dev --schema=./prisma/schema.prisma",
+    "db:studio": "npm exec --package=prisma@5.22.0 -- prisma studio --schema=./prisma/schema.prisma",
+    "db:seed": "npm exec --package=prisma@5.22.0 -- prisma db seed"
   },
   "dependencies": {
     "@prisma/client": "5.22.0",

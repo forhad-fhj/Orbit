@@ -17,7 +17,7 @@
     "build:api": "npm run db:generate && npm run build -w packages/shared-types -w packages/prisma && npm run build -w apps/api",
     "start": "npm run start --workspaces --if-present",
     "db:push": "npm run db:push -w packages/prisma",
-    "db:generate": "npm exec -- prisma generate --schema=./packages/prisma/prisma/schema.prisma",
+    "db:generate": "npm exec --package=prisma@5.22.0 -- prisma generate --schema=./packages/prisma/prisma/schema.prisma",
     "postinstall": "npm run db:generate"
   },
   "dependencies": {
