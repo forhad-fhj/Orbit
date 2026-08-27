@@ -9,7 +9,7 @@ export function SearchBar() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<any>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const debounceRef = useRef<NodeJS.Timeout>();
+  const debounceRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 

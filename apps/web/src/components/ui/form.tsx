@@ -3,7 +3,7 @@ import { useForm, type UseFormReturn, type FieldValues, type SubmitHandler } fro
 import { zodResolver } from "@hookform/resolvers/zod"
 import type { z } from "zod"
 
-const Form = ({ children, ...formProps }: React.FormHTMLAttributes<HTMLFormElement> & { form: UseFormReturn<any> }) => {
+const Form = ({ children, ...formProps }: React.FormHTMLAttributes<HTMLFormElement> & { form?: UseFormReturn<any> }) => {
   return <form {...formProps}>{children}</form>
 }
 

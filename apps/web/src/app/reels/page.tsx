@@ -106,7 +106,7 @@ export default function ReelsPage() {
 
   return (
     <div className="h-screen w-full sm:w-[400px] mx-auto bg-black overflow-y-scroll snap-y snap-mandatory hide-scrollbar">
-      {data.pages.map((page, i) => (
+      {data?.pages.map((page, i) => (
         page.data.map((reel: any) => (
           <ReelVideo key={reel.id} reel={reel} />
         ))

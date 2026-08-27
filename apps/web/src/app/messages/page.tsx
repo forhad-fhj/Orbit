@@ -16,7 +16,7 @@ export default function MessengerPage() {
   const [inputText, setInputText] = useState('');
   const [typingUsers, setTypingUsers] = useState<Set<string>>(new Set());
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const typingTimeoutRef = useRef<NodeJS.Timeout>();
+  const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const { data: convData } = useQuery({
     queryKey: ['conversations'],
