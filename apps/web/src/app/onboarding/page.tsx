@@ -58,7 +58,7 @@ export default function OnboardingPage() {
       });
       const data = await res.json();
       if (data.success) {
-        router.push('/');
+        window.location.href = '/';
       } else {
         setServerError(data.error || 'Failed to complete onboarding');
       }

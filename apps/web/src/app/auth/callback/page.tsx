@@ -34,9 +34,9 @@ function AuthCallbackContent() {
       .then((data) => {
         if (data.success) {
           if (data.data.isPending) {
-            router.push('/onboarding');
+            window.location.href = '/onboarding';
           } else {
-            router.push('/');
+            window.location.href = '/';
           }
         } else {
           router.push('/login?error=' + encodeURIComponent(data.error || 'Authentication failed'));
