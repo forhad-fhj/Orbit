@@ -11,6 +11,7 @@ const COOKIE_OPTIONS = {
   httpOnly: true,
   secure: true, // Must be true when sameSite is 'none'
   sameSite: 'none' as const, // Required for cross-origin cookies (Vercel → Render)
+  path: '/', // Ensure cookie is sent for all routes, not just /api/auth
   maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
 };
 
