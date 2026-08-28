@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { OAuth2Client } from 'google-auth-library';
+import { OAuth2Client, TokenPayload } from 'google-auth-library';
 import jwt from 'jsonwebtoken';
 import { prisma } from '@socialplatform/prisma';
 import { OnboardingPayload, BaseResponse, GoogleAuthResponse, UserDTO } from '@socialplatform/shared-types';
@@ -16,11 +16,11 @@ const COOKIE_OPTIONS = {
 
 // Shared logic: find-or-create user from Google payload, set cookies
 async function handleGooglePayload(
-  payload: { sub: string; email: string; name?: string; picture?: string },
+  payload: TokenPayload,
   res: Response
 ) {
   const googleId = payload.sub;
-  const email = payload.email;
+  const email = payload.email as string;
   const name = payload.name || 'User';
   const avatarUrl = payload.picture;
 
