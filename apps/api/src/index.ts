@@ -30,11 +30,18 @@ const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: { origin: FRONTEND_URL, credentials: true }
+  cors: { origin: FRONTEND_URL, credentials: true },
+  // Render free tier: force polling only (WebSocket upgrades are unreliable)
+  transports: ['polling'],
+  pingTimeout: 60000,
+  pingInterval: 25000,
 });
 
 // Middleware
-app.use(helmet());
+app.use(helmet({
+  // Disable COOP so Google OAuth popup can postMessage back to the parent window
+  crossOriginOpenerPolicy: false,
+}));
 app.use(cors({
   origin: FRONTEND_URL,
   credentials: true

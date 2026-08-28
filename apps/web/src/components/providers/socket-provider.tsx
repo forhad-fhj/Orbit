@@ -27,6 +27,8 @@ export function SocketProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const s = socketIO(API_URL, {
       withCredentials: true,
+      // Render free tier: WebSocket upgrades are unreliable, use polling only
+      transports: ['polling'],
     });
 
     socketRef.current = s;
