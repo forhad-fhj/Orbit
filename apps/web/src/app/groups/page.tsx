@@ -1,18 +1,19 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
+import { apiUrl } from '@/lib/api';
 
 export default function GroupsDirectory() {
   const { data, status } = useQuery({
     queryKey: ['groups'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5001/api/groups');
+      const res = await fetch(apiUrl('/api/groups'));
       return res.json();
     }
   });
 
   const handleJoin = async (id: string) => {
-    await fetch(`http://localhost:5001/api/groups/${id}/join`, { method: 'POST' });
+    await fetch(apiUrl(`/api/groups/${id}/join`), { method: 'POST' });
   };
 
   if (status === 'pending') return <div className="p-8">Loading groups...</div>;

@@ -5,9 +5,10 @@ import { useEffect, useRef, useCallback, useState } from 'react';
 import { PostCard, PostProps } from '@/components/feed/PostCard';
 import { StoryTray } from '@/components/stories/StoryTray';
 import { StoryViewer } from '@/components/stories/StoryViewer';
+import { apiUrl } from '@/lib/api';
 
 const fetchFeed = async ({ pageParam = 0 }) => {
-  const res = await fetch(`http://localhost:5001/api/feed?cursor=${pageParam}`);
+  const res = await fetch(apiUrl(`/api/feed?cursor=${pageParam}`));
   if (!res.ok) throw new Error('Network response was not ok');
   return res.json();
 };

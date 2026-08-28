@@ -5,6 +5,7 @@ import { Heart, MessageCircle, Bookmark, MoreHorizontal, Send } from 'lucide-rea
 import { formatDistanceToNow } from 'date-fns';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import { apiUrl } from '@/lib/api';
 
 export interface PostProps {
   id: string;
@@ -35,7 +36,7 @@ export function PostCard({ post }: { post: PostProps }) {
     setLikeCount(c => isLiked ? c - 1 : c + 1);
 
     try {
-      await fetch(`http://localhost:5001/api/posts/${post.id}/react`, {
+      await fetch(apiUrl(`/api/posts/${post.id}/react`), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ export function PostCard({ post }: { post: PostProps }) {
     setIsSaved(!isSaved);
     try {
       const method = isSaved ? 'DELETE' : 'POST';
-      await fetch(`http://localhost:5001/api/posts/${post.id}/save`, { method });
+      await fetch(apiUrl(`/api/posts/${post.id}/save`), { method });
     } catch (e) {
       setIsSaved(isSaved);
     }

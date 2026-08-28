@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { apiUrl } from '@/lib/api';
 
 export function StoryViewer({ 
   userStoryGroup, 
@@ -15,7 +16,7 @@ export function StoryViewer({
   
   useEffect(() => {
     // Record view
-    fetch(`http://localhost:5001/api/stories/${stories[currentIndex].id}/view`, { method: 'POST' }).catch(() => {});
+    fetch(apiUrl(`/api/stories/${stories[currentIndex].id}/view`), { method: 'POST' }).catch(() => {});
     
     // Auto advance every 5s
     const timer = setTimeout(() => {

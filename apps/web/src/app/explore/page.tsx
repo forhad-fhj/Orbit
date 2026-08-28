@@ -3,9 +3,10 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useEffect, useRef, useCallback } from 'react';
 import { Heart, MessageCircle } from 'lucide-react';
+import { apiUrl } from '@/lib/api';
 
 const fetchExplore = async ({ pageParam = undefined }) => {
-  const url = pageParam ? `http://localhost:5001/api/feed/explore?cursor=${pageParam}` : `http://localhost:5001/api/feed/explore`;
+  const url = pageParam ? apiUrl(`/api/feed/explore?cursor=${pageParam}`) : apiUrl('/api/feed/explore');
   const res = await fetch(url);
   if (!res.ok) throw new Error('Network response was not ok');
   return res.json();

@@ -1,9 +1,10 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { apiUrl } from '@/lib/api';
 
 const fetchStories = async () => {
-  const res = await fetch('http://localhost:5001/api/stories/feed');
+  const res = await fetch(apiUrl('/api/stories/feed'));
   if (!res.ok) throw new Error('Error fetching stories');
   return res.json();
 };

@@ -7,6 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Send, Image, ArrowLeft } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
+import { apiUrl } from '@/lib/api';
 
 export default function MessengerPage() {
   const { socket, onlineUsers } = useSocket();
@@ -21,13 +22,13 @@ export default function MessengerPage() {
   const { data: convData } = useQuery({
     queryKey: ['conversations'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5001/api/chat/conversations', { credentials: 'include' });
+      const res = await fetch(apiUrl('/api/chat/conversations'), { credentials: 'include' });
       return res.json();
     }
   });
 
   const loadMessages = useCallback(async (conversationId: string) => {
-    const res = await fetch(`http://localhost:5001/api/chat/conversations/${conversationId}/messages`, { credentials: 'include' });
+    const res = await fetch(apiUrl(`/api/chat/conversations/${conversationId}/messages`), { credentials: 'include' });
     const data = await res.json();
     setMessages(data.data || []);
   }, []);

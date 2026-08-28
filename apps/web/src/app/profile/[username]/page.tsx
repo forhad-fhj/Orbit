@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Grid, Video, Tag } from 'lucide-react';
+import { apiUrl } from '@/lib/api';
 
 export default function ProfilePage() {
   const { username } = useParams();
@@ -13,7 +14,7 @@ export default function ProfilePage() {
   const { data, status } = useQuery({
     queryKey: ['profile', username],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5001/api/users/${username}`);
+      const res = await fetch(apiUrl(`/api/users/${username}`));
       if (!res.ok) throw new Error('Error fetching profile');
       return res.json();
     }
@@ -21,7 +22,7 @@ export default function ProfilePage() {
 
   const handleFollow = async () => {
     // Optimistic or real API call
-    await fetch(`http://localhost:5001/api/follow/${data?.data?.id}`, { method: 'POST' });
+    await fetch(apiUrl(`/api/follow/${data?.data?.id}`), { method: 'POST' });
     // Invalidate query in a real app
   };
 

@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, useRef, ReactNode } from 'react';
 import { io as socketIO, Socket } from 'socket.io-client';
+import { API_URL } from '@/lib/api';
 
 interface SocketContextType {
   socket: Socket | null;
@@ -24,7 +25,7 @@ export function SocketProvider({ children }: { children: ReactNode }) {
   const socketRef = useRef<Socket | null>(null);
 
   useEffect(() => {
-    const s = socketIO('http://localhost:5001', {
+    const s = socketIO(API_URL, {
       withCredentials: true,
     });
 

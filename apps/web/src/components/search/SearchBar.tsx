@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Search, Users, Hash, Layers } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useRouter } from 'next/navigation';
+import { apiUrl } from '@/lib/api';
 
 export function SearchBar() {
   const [query, setQuery] = useState('');
@@ -24,7 +25,7 @@ export function SearchBar() {
 
     debounceRef.current = setTimeout(async () => {
       try {
-        const res = await fetch(`http://localhost:5001/api/search?q=${encodeURIComponent(query)}`, { credentials: 'include' });
+        const res = await fetch(apiUrl(`/api/search?q=${encodeURIComponent(query)}`), { credentials: 'include' });
         const data = await res.json();
         setResults(data.data);
         setIsOpen(true);

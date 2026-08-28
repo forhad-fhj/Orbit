@@ -4,9 +4,10 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { useEffect, useRef, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Heart, MessageCircle, Bookmark, Share2 } from 'lucide-react';
+import { apiUrl } from '@/lib/api';
 
 const fetchReels = async ({ pageParam = undefined }) => {
-  const url = pageParam ? `http://localhost:5001/api/reels/feed?cursor=${pageParam}` : `http://localhost:5001/api/reels/feed`;
+  const url = pageParam ? apiUrl(`/api/reels/feed?cursor=${pageParam}`) : apiUrl('/api/reels/feed');
   const res = await fetch(url);
   if (!res.ok) throw new Error('Error fetching reels');
   return res.json();

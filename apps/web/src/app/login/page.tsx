@@ -3,6 +3,7 @@
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { apiUrl } from '@/lib/api';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -10,7 +11,7 @@ export default function LoginPage() {
 
   const handleSuccess = async (credentialResponse: any) => {
     try {
-      const res = await fetch('http://localhost:5001/api/auth/google', {
+      const res = await fetch(apiUrl('/api/auth/google'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

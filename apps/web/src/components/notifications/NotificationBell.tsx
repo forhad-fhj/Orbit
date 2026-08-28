@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Bell } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { formatDistanceToNow } from 'date-fns';
+import { apiUrl } from '@/lib/api';
 
 const notifLabel: Record<string, string> = {
   LIKE: 'liked your post',
@@ -25,7 +26,7 @@ export function NotificationBell() {
   const { data: countData } = useQuery({
     queryKey: ['notif-count'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5001/api/notifications/unread-count', { credentials: 'include' });
+      const res = await fetch(apiUrl('/api/notifications/unread-count'), { credentials: 'include' });
       return res.json();
     },
     refetchInterval: 30000,
@@ -34,7 +35,7 @@ export function NotificationBell() {
   const { data: notifData } = useQuery({
     queryKey: ['notifications'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5001/api/notifications', { credentials: 'include' });
+      const res = await fetch(apiUrl('/api/notifications'), { credentials: 'include' });
       return res.json();
     },
     enabled: isOpen,
@@ -58,7 +59,7 @@ export function NotificationBell() {
   const handleOpen = async () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
-      await fetch('http://localhost:5001/api/notifications/read', {
+      await fetch(apiUrl('/api/notifications/read'), {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },

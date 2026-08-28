@@ -3,6 +3,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Shield, Users, FileText, BarChart3, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { apiUrl } from '@/lib/api';
 
 export default function AdminDashboard() {
   const queryClient = useQueryClient();
@@ -10,7 +11,7 @@ export default function AdminDashboard() {
   const { data: analytics, status: analyticsStatus } = useQuery({
     queryKey: ['admin-analytics'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5001/api/admin/analytics', { credentials: 'include' });
+      const res = await fetch(apiUrl('/api/admin/analytics'), { credentials: 'include' });
       if (res.status === 403) throw new Error('Forbidden');
       return res.json();
     }
@@ -19,14 +20,14 @@ export default function AdminDashboard() {
   const { data: reports } = useQuery({
     queryKey: ['admin-reports'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5001/api/admin/reports', { credentials: 'include' });
+      const res = await fetch(apiUrl('/api/admin/reports'), { credentials: 'include' });
       return res.json();
     }
   });
 
   const resolveMutation = useMutation({
     mutationFn: async ({ id, status }: { id: string; status: string }) => {
-      await fetch(`http://localhost:5001/api/admin/reports/${id}/resolve`, {
+      await fetch(apiUrl(`/api/admin/reports/${id}/resolve`), {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -38,7 +39,7 @@ export default function AdminDashboard() {
 
   const suspendMutation = useMutation({
     mutationFn: async (userId: string) => {
-      await fetch(`http://localhost:5001/api/admin/users/${userId}/suspend`, {
+      await fetch(apiUrl(`/api/admin/users/${userId}/suspend`), {
         method: 'POST',
         credentials: 'include'
       });
