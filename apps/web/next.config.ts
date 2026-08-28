@@ -8,8 +8,12 @@ const nextConfig: NextConfig = {
         source: "/(.*)",
         headers: [
           {
-            // Required for Google OAuth popup to postMessage back to the parent window
+            // Required for Google OAuth popup postMessage back to parent window
             key: "Cross-Origin-Opener-Policy",
+            value: "unsafe-none",
+          },
+          {
+            key: "Cross-Origin-Embedder-Policy",
             value: "unsafe-none",
           },
         ],

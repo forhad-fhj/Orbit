@@ -46,7 +46,6 @@ export default function LoginPage() {
             <GoogleLogin
               onSuccess={handleSuccess}
               onError={() => setError('Google Login Failed')}
-              useOneTap
             />
             {error && <p className="text-sm text-red-500">{error}</p>}
           </div>
