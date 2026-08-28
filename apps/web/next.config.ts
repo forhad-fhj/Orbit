@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        // Proxy to Render backend
+        destination: 'https://orbit-mzra.onrender.com/api/:path*',
+      },
+    ];
+  },
   async headers() {
     return [
       {

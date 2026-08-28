@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const authCookie = request.cookies.get('auth_token');
   const pendingCookie = request.cookies.get('pending_auth');
 
   const path = request.nextUrl.pathname;
   
-  const isPublicPath = path === '/login';
+  const isPublicPath = path === '/login' || path.startsWith('/auth/callback');
   const isOnboardingPath = path === '/onboarding';
 
   if (!authCookie && !pendingCookie && !isPublicPath) {

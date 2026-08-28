@@ -1,4 +1,5 @@
-export const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001').replace(/\/$/, '');
+// Use relative path to hit the Next.js rewrite proxy (so cookies are first-party)
+export const API_URL = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001').replace(/\/$/, '');
 
 export function apiUrl(path: string) {
   return `${API_URL}${path.startsWith('/') ? path : `/${path}`}`;
