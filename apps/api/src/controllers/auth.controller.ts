@@ -9,8 +9,8 @@ const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret';
 const COOKIE_OPTIONS = {
   httpOnly: true,
-  secure: process.env.NODE_ENV === 'production',
-  sameSite: 'strict' as const,
+  secure: true, // Must be true when sameSite is 'none'
+  sameSite: 'none' as const, // Required for cross-origin cookies (Vercel → Render)
   maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
 };
 
