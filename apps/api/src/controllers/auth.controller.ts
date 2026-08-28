@@ -14,72 +14,118 @@ const COOKIE_OPTIONS = {
   maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
 };
 
+// Shared logic: find-or-create user from Google payload, set cookies
+async function handleGooglePayload(
+  payload: { sub: string; email: string; name?: string; picture?: string },
+  res: Response
+) {
+  const googleId = payload.sub;
+  const email = payload.email;
+  const name = payload.name || 'User';
+  const avatarUrl = payload.picture;
+
+  const existingUser = await prisma.user.findUnique({ where: { googleId } });
+
+  if (existingUser) {
+    const token = jwt.sign(
+      { userId: existingUser.id, role: existingUser.role, gender: existingUser.gender },
+      JWT_SECRET,
+      { expiresIn: '7d' }
+    );
+    res.cookie('auth_token', token, COOKIE_OPTIONS);
+
+    const userDto: UserDTO = {
+      id: existingUser.id,
+      email: existingUser.email,
+      name: existingUser.displayName,
+      gender: existingUser.gender,
+      avatarUrl: existingUser.avatarUrl || undefined,
+      createdAt: existingUser.createdAt,
+    };
+
+    const response: BaseResponse<GoogleAuthResponse> = {
+      success: true,
+      data: { isPending: false, user: userDto },
+    };
+    return res.json(response);
+  } else {
+    const pendingToken = jwt.sign(
+      { googleId, email, name, avatarUrl },
+      JWT_SECRET,
+      { expiresIn: '1h' }
+    );
+    res.cookie('pending_auth', pendingToken, { ...COOKIE_OPTIONS, maxAge: 60 * 60 * 1000 });
+
+    const response: BaseResponse<GoogleAuthResponse> = {
+      success: true,
+      data: { isPending: true },
+    };
+    return res.json(response);
+  }
+}
+
+// Legacy: id_token from GIS popup (kept for backward compat)
 export const googleLogin = async (req: Request, res: Response) => {
   try {
     const { credential } = req.body;
     if (!credential) {
       return res.status(400).json({ success: false, error: 'Google credential missing' });
     }
-
     const ticket = await googleClient.verifyIdToken({
       idToken: credential,
       audience: process.env.GOOGLE_CLIENT_ID,
     });
-    
     const payload = ticket.getPayload();
     if (!payload || !payload.email || !payload.sub) {
       return res.status(400).json({ success: false, error: 'Invalid Google payload' });
     }
-
-    const googleId = payload.sub;
-    const email = payload.email;
-    const name = payload.name || 'User';
-    const avatarUrl = payload.picture;
-
-    const existingUser = await prisma.user.findUnique({ where: { googleId } });
-
-    if (existingUser) {
-      // User exists, issue auth token
-      const token = jwt.sign(
-        { userId: existingUser.id, role: existingUser.role, gender: existingUser.gender },
-        JWT_SECRET,
-        { expiresIn: '7d' }
-      );
-
-      res.cookie('auth_token', token, COOKIE_OPTIONS);
-      
-      const userDto: UserDTO = {
-        id: existingUser.id,
-        email: existingUser.email,
-        name: existingUser.displayName,
-        gender: existingUser.gender,
-        avatarUrl: existingUser.avatarUrl || undefined,
-        createdAt: existingUser.createdAt
-      };
-
-      const response: BaseResponse<GoogleAuthResponse> = {
-        success: true,
-        data: { isPending: false, user: userDto }
-      };
-      return res.json(response);
-    } else {
-      // New user, issue pending token
-      const pendingToken = jwt.sign(
-        { googleId, email, name, avatarUrl },
-        JWT_SECRET,
-        { expiresIn: '1h' }
-      );
-
-      res.cookie('pending_auth', pendingToken, { ...COOKIE_OPTIONS, maxAge: 60 * 60 * 1000 });
-      
-      const response: BaseResponse<GoogleAuthResponse> = {
-        success: true,
-        data: { isPending: true }
-      };
-      return res.json(response);
-    }
+    return handleGooglePayload(payload, res);
   } catch (error: any) {
     console.error('Google Login Error:', error);
+    return res.status(500).json({ success: false, error: 'Authentication failed' });
+  }
+};
+
+// New: OAuth2 authorization code exchange (redirect flow — no popup, no COOP issues)
+export const googleCodeLogin = async (req: Request, res: Response) => {
+  try {
+    const { code, redirectUri } = req.body;
+    if (!code || !redirectUri) {
+      return res.status(400).json({ success: false, error: 'Missing code or redirectUri' });
+    }
+
+    // Exchange auth code for tokens at Google's token endpoint
+    const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        code,
+        client_id: process.env.GOOGLE_CLIENT_ID!,
+        client_secret: process.env.GOOGLE_CLIENT_SECRET!,
+        redirect_uri: redirectUri,
+        grant_type: 'authorization_code',
+      }),
+    });
+
+    const tokenData: any = await tokenRes.json();
+    if (!tokenData.id_token) {
+      console.error('Token exchange failed:', tokenData);
+      return res.status(400).json({ success: false, error: 'Failed to exchange auth code' });
+    }
+
+    // Verify the id_token
+    const ticket = await googleClient.verifyIdToken({
+      idToken: tokenData.id_token,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+    const payload = ticket.getPayload();
+    if (!payload || !payload.email || !payload.sub) {
+      return res.status(400).json({ success: false, error: 'Invalid Google token payload' });
+    }
+
+    return handleGooglePayload(payload, res);
+  } catch (error: any) {
+    console.error('Google Code Login Error:', error);
     return res.status(500).json({ success: false, error: 'Authentication failed' });
   }
 };
