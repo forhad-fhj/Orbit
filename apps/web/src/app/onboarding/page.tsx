@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { apiUrl } from '@/lib/api';
+import { apiFetch } from '@/lib/api';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -52,9 +52,8 @@ export default function OnboardingPage() {
 
   async function onSubmit(values: z.infer<typeof onboardingSchema>) {
     try {
-      const res = await fetch(apiUrl('/api/auth/onboarding'), {
+      const res = await apiFetch('/api/auth/onboarding', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
       });
       const data = await res.json();

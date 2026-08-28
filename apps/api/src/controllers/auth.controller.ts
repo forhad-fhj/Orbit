@@ -191,7 +191,7 @@ export const completeOnboarding = async (req: Request, res: Response) => {
     );
 
     res.cookie('auth_token', token, COOKIE_OPTIONS);
-    res.clearCookie('pending_auth');
+    res.clearCookie('pending_auth', COOKIE_OPTIONS);
 
     const userDto: UserDTO = {
       id: newUser.id,
@@ -242,7 +242,7 @@ export const me = async (req: Request, res: Response) => {
 };
 
 export const logout = async (req: Request, res: Response) => {
-  res.clearCookie('auth_token');
-  res.clearCookie('pending_auth');
+  res.clearCookie('auth_token', COOKIE_OPTIONS);
+  res.clearCookie('pending_auth', COOKIE_OPTIONS);
   return res.json({ success: true, message: 'Logged out successfully' });
 };
